@@ -1,0 +1,27 @@
+# Source files
+src/
+tsconfig.json
+.eslintrc.js
+.prettierrc
+
+# Example and reference
+example.ts
+priv/
+
+# Tests
+test/
+jest.config.cjs
+*.test.ts
+*.spec.ts
+
+# Build artifacts
+*.tsbuildinfo
+.DS_Store
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.*
+
