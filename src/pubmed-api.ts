@@ -1,4 +1,5 @@
 import { Document } from "@langchain/core/documents";
+import { getEnvironmentVariable } from "@langchain/core/utils/env";
 import {
   PubMedAPIWrapperOptions,
   PubMedArticleMetadata,
@@ -41,8 +42,12 @@ export class PubMedAPIWrapper {
     this.maxQueryLength = options.maxQueryLength ?? 300;
     this.docContentCharsMax = options.docContentCharsMax ?? 2000;
 
-    const email = options.email ?? "your_email@example.com";
-    const apiKey = options.apiKey ?? "";
+    const email =
+      options.email ??
+      getEnvironmentVariable("PUBMED_EMAIL") ??
+      "your_email@example.com";
+    const apiKey =
+      options.apiKey ?? getEnvironmentVariable("PUBMED_API_KEY") ?? "";
 
     this.httpClient = new RetryableHttpClient({
       maxRetry: options.maxRetry ?? 5,

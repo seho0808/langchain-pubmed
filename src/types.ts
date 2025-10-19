@@ -1,7 +1,10 @@
+import type { ToolParams } from "@langchain/core/tools";
+
 /**
- * Configuration options for the PubMed API wrapper.
+ * Configuration options for the PubMed API wrapper and tool.
+ * Extends ToolParams to support LangChain tool configuration.
  */
-export interface PubMedAPIWrapperOptions {
+export interface PubMedAPIWrapperOptions extends ToolParams {
   /**
    * Number of the top-scored documents to return from PubMed search.
    * @default 3
