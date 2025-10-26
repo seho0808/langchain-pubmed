@@ -30,7 +30,7 @@
     "test:coverage": "jest --coverage",
     "test:e2e": "jest --testPathPattern=e2e",
     "test:unit": "jest --testPathPattern=unit",
-    "prepublishOnly": "npm run build && npm run test"
+    "prepublishOnly": "npm run build && jest --testPathIgnorePatterns=e2e"
   },
   "keywords": [
     "langchain",

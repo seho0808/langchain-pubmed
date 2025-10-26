@@ -132,4 +132,14 @@ export class PubMedTool extends Tool {
   async _call(query: string): Promise<string> {
     return this.apiWrapper.run(query);
   }
+
+  /**
+   * Invokes the PubMed tool with a search query.
+   * This method is inherited from the Tool base class but explicitly typed here
+   * for better TypeScript inference in generated .d.ts files.
+   *
+   * @param input The search query string
+   * @returns Promise resolving to formatted search results
+   */
+  declare invoke: (input: string) => Promise<string>;
 }
