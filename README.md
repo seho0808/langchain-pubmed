@@ -70,22 +70,23 @@ console.log(result);
 
 ```typescript
 import { ChatOpenAI } from "@langchain/openai";
-import { createReactAgent } from "@langchain/langgraph/prebuilt";
+import { createAgent } from "langchain";
 import { PubMedTool } from "langchain-pubmed";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const model = new ChatOpenAI({
-  model: "gpt-4",
-  temperature: 0,
+  model: "gpt-5-nano",
 });
 
 const tools = [
   new PubMedTool({
     topKResults: 5,
-    email: "your_email@example.com",
   }),
 ];
 
-const agent = createReactAgent({ llm: model, tools });
+const agent = createAgent({ model, tools });
 
 const result = await agent.invoke({
   messages: [
