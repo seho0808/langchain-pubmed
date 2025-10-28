@@ -38,9 +38,9 @@ export class PubMedAPIWrapper {
   private readonly parser: PubMedParser;
 
   constructor(options: PubMedAPIWrapperOptions = {}) {
-    this.topKResults = options.topKResults ?? 3;
+    this.topKResults = options.topKResults ?? 5;
     this.maxQueryLength = options.maxQueryLength ?? 300;
-    this.docContentCharsMax = options.docContentCharsMax ?? 2000;
+    this.docContentCharsMax = options.docContentCharsMax ?? 10000;
 
     const email =
       options.email ??
