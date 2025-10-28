@@ -1,6 +1,6 @@
 {
   "name": "langchain-pubmed",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "LangChain.js integration for PubMed API - search biomedical literature and retrieve article metadata",
   "type": "module",
   "main": "./dist/index.js",
