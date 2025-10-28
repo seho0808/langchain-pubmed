@@ -50,7 +50,10 @@ export class PubMedParser {
 
     return {
       uid,
-      Title: articleData.ArticleTitle ?? "",
+      Title:
+        typeof articleData.ArticleTitle === "string"
+          ? articleData.ArticleTitle
+          : (JSON.stringify(articleData.ArticleTitle) ?? ""),
       Published: pubDate,
       "Copyright Information": articleData.Abstract?.CopyrightInformation ?? "",
       Summary: summary,

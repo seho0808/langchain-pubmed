@@ -241,6 +241,24 @@ describe("PubMedParser", () => {
       expect(result.Published).toBe("");
       expect(result.Summary).toBe("No abstract available");
     });
+
+    it("should handle article title as object", () => {
+      const xmlResponse: PubMedXMLResponse = {
+        PubmedArticleSet: {
+          PubmedArticle: {
+            MedlineCitation: {
+              Article: {
+                ArticleTitle: { AuthorList: "Test Author" },
+              },
+            },
+          },
+        },
+      };
+
+      const result = parser.extractArticleMetadata("12345", xmlResponse);
+
+      expect(result.Title).toBe('{"AuthorList":"Test Author"}');
+    });
   });
 
   describe("toDocument", () => {

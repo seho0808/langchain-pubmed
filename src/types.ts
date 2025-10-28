@@ -110,7 +110,7 @@ export interface PubMedBookArticle {
  * Article data structure containing metadata and abstract.
  */
 export interface PubMedArticleData {
-  ArticleTitle?: string;
+  ArticleTitle?: string | Record<string, unknown>;
   ArticleDate?: {
     Year?: string;
     Month?: string;
@@ -140,4 +140,3 @@ export interface PubMedXMLResponse {
     PubmedBookArticle?: PubMedBookArticle;
   };
 }
-
