@@ -26,9 +26,9 @@ describe("PubMedTool", () => {
     } as any;
 
     // Mock the constructor
-    (PubMedAPIWrapper as jest.MockedClass<typeof PubMedAPIWrapper>).mockImplementation(
-      () => mockApiWrapper
-    );
+    (
+      PubMedAPIWrapper as jest.MockedClass<typeof PubMedAPIWrapper>
+    ).mockImplementation(() => mockApiWrapper);
 
     tool = new PubMedTool({
       topKResults: 3,
@@ -171,7 +171,7 @@ describe("PubMedTool", () => {
       mockApiWrapper.run.mockResolvedValue(mockResult);
 
       const callResult = await tool._call("test query");
-      
+
       mockApiWrapper.run.mockResolvedValue(mockResult);
       const invokeResult = await tool.invoke("test query");
 
@@ -289,4 +289,3 @@ describe("PubMedTool", () => {
     });
   });
 });
-

@@ -1,6 +1,6 @@
 /**
  * End-to-end tests for PubMed API integration
- * 
+ *
  * These tests make ACTUAL API calls to PubMed.
  * Keep minimal - only essential happy path scenarios.
  * More detailed testing should be done in unit and integration tests.
