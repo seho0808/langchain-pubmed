@@ -35,9 +35,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Test
+        run: npm run test
+
       - name: Check build output
         run: |
           ls -la dist/
           test -f dist/index.js
           test -f dist/index.d.ts
-
